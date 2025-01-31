@@ -23,8 +23,9 @@ jobs:
       - name: Get Docker Image from Docker Hub
         run: |
           docker pull docker.io/staocube/supermariofitopsproject:${{ env.VERSION }}
-          mkdir -p $GITHUB_WORKSPACE/images
+          mkdir -p $GITHUB_WORKSPACE/images/
           docker save -o $GITHUB_WORKSPACE/images/supermariolatestdockerimage.tar docker.io/staocube/supermariofitopsproject:${{ env.VERSION }}
+          ls -lh $GITHUB_WORKSPACE
      
       - name: Run Trivy vulnerability scanner in tarball mode
         uses: aquasecurity/trivy-action@master
