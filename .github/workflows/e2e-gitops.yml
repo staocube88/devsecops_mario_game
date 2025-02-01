@@ -3,7 +3,7 @@ name: "Run SAST, Build and push supermario image, scan image, Update deployment 
 on:
   push:
     branches:
-      - main
+      - master
  
 env:
   VERSION: $(( $(cat version.txt) + 1 ))
